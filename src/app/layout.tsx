@@ -1,9 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Saira_Stencil_One, Saira } from 'next/font/google'
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './components/providers'
+import { Header } from './components/header'
 
-const inter = Inter({ subsets: ['latin'] })
+const saira_stencil_one = Saira_Stencil_One({
+  weight: ['400'],
+  subsets: ['latin'],
+  style: ['normal'],
+  variable: "--font-saira-stencil-one",
+})
+
+const saira = Saira({
+  weight: ['600', '500', '400', '300'],
+  subsets: ['latin'],
+  style: ['normal'],
+  variable: "--font-saira",
+})
 
 export const metadata: Metadata = {
   title: 'Capputeeno',
@@ -21,9 +34,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-        <body className={inter.className}>
+        <body className={`${saira_stencil_one.variable} ${saira.variable}`}>
           <Providers>
-            <StyledComponentsRegistry>{ children }</StyledComponentsRegistry>
+            <StyledComponentsRegistry>
+              <Header />
+              { children }
+            </StyledComponentsRegistry>
           </Providers>
         </body>
     </html>
