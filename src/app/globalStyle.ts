@@ -25,4 +25,8 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
     }
+
+    body, input, textarea, button {
+        font: 400 1rem var(--font-saira);
+    }
 `
