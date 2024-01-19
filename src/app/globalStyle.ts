@@ -9,7 +9,8 @@ export const defaultTheme = {
     '--Price-Color': '#09090A',
     '--Cart-Quantity': '#DE3838',
     '--Finalize-Purchase': '#51B853',
-    '--Trash-Color': '#DE3838'
+    '--Trash-Color': '#DE3838',
+    '--Placeholder-Color': '#737380',
 } as const
 
 export const GlobalStyle = createGlobalStyle`
@@ -18,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         list-style: none;
+    }
+
+    :focus {
+        outline: 0;
     }
 
     body, html {
