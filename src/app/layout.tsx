@@ -3,6 +3,7 @@ import { Saira_Stencil_One, Saira } from 'next/font/google'
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './components/providers'
 import { Header } from './components/header'
+import { DefaultPageLayout } from './components/defaultPageLayout'
 
 const saira_stencil_one = Saira_Stencil_One({
   weight: ['400'],
@@ -38,7 +39,9 @@ export default function RootLayout({
           <Providers>
             <StyledComponentsRegistry>
               <Header />
-              { children }
+              <DefaultPageLayout>
+                { children }
+              </DefaultPageLayout>
             </StyledComponentsRegistry>
           </Providers>
         </body>
