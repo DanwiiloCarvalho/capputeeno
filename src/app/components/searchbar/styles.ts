@@ -26,7 +26,7 @@ export const SearchBarContainer = styled.div`
     line-height: 1.375rem;
 
     &::placeholder {
-      color: ${props => props.theme["--Placeholder-Color"]};
+      color: ${props => props.theme["--Text-Dark-Inputs-Icons"]};
       font-size: 0.7rem;
     }
    }

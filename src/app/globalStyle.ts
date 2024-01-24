@@ -10,7 +10,9 @@ export const defaultTheme = {
     '--Cart-Quantity': '#DE3838',
     '--Finalize-Purchase': '#51B853',
     '--Trash-Color': '#DE3838',
-    '--Placeholder-Color': '#737380',
+    '--Text-Dark-Inputs-Icons': '#737380',
+    '--Underline-Color': '#FFA585',
+    '--Selected-Category-Filter': '#41414D',
 } as const
 
 export const GlobalStyle = createGlobalStyle`
