@@ -1,6 +1,13 @@
+import { FilterBar } from "./components/filter-bar";
+import { FilterByCategory } from "./components/filter-by-category";
+import { MainContainer } from "./styles";
+
+
 
 export default function Home() {
   return (
-    <h1>Lista de produtos</h1>
+    <MainContainer>
+      <FilterBar />
+    </MainContainer>
   )
 }
