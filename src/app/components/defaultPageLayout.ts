@@ -8,6 +8,6 @@ export const DefaultPageLayout = styled.div`
     padding: 0.75rem 1.5rem;
 
     @media screen and (min-width: 768px) {
-        padding: 2.12rem 10rem;
+        padding: 2.12rem 10rem 3.75rem;
     }
 `
