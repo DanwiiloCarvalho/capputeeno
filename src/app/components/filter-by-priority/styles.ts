@@ -11,23 +11,17 @@ export const FilterByPriorityContainer = styled.div`
     line-height: 157.143%;
 
     justify-content: flex-end;
-    /* margin-top: 1.4rem; */
 
-    span {
-        font-size: .875rem;
-    }
-    
     button {
         cursor: pointer;
-        height: 1.5rem;
-        width: 1.5rem;
         display: flex;
-        align-items: center;
+        gap: 0.5rem;
         background-color: transparent;
         border: none;
+        color: inherit;
 
-        svg {
-            height: inherit;
+        span {
+            font-size: .875rem;
         }
     }
 
@@ -45,17 +39,10 @@ export const FilterByPriorityContainer = styled.div`
 
         font-size: .875rem;
         gap: .25rem;
+        z-index: 999;
 
         > li {
             cursor: pointer;
         }
-    }
-
-    @media screen and (min-width: 768px) {
-        
-    }
-
-    @media screen and (min-width: 968px) {
-        
     }
 `
