@@ -1,11 +1,11 @@
 import Image from "next/image";
-import imageExample from "@/app/product-image/caneca.png"
+import imageExample from "@/app/product-image/caneca.jpg"
 import { ProductCardContainer, Separator } from "./styles";
 
 export function ProductCard(){
     return(
         <ProductCardContainer>
-            <Image src={imageExample} alt="" width={256} height={300} />
+            <Image src={imageExample} alt="" width={imageExample.width} height={imageExample.height} />
             <div>
                 <h2>Caneca de cerâmica</h2>
                 <Separator />
