@@ -13,6 +13,8 @@ export const defaultTheme = {
     '--Text-Dark-Inputs-Icons': '#737380',
     '--Underline-Color': '#FFA585',
     '--Selected-Category-Filter': '#41414D',
+    '--Back-Button': '#617480',
+    '--Add-To-Cart': '#115D8C',
 } as const
 
 export const GlobalStyle = createGlobalStyle`
