@@ -15,6 +15,9 @@ export const defaultTheme = {
     '--Selected-Category-Filter': '#41414D',
     '--Back-Button': '#617480',
     '--Add-To-Cart': '#115D8C',
+    '--Select-Border': '#A8A8B3',
+    '--Select-Background': '#F3F5F6',
+    '--Purchase-Text-Color': '#F5F5FA',
 } as const
 
 export const GlobalStyle = createGlobalStyle`
