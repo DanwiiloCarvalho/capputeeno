@@ -1,15 +1,22 @@
 import Image from "next/image";
 import imageExample from "@/app/product-image/caneca.jpg"
 import { ProductCardContainer, Separator } from "./styles";
+import { priceFormat } from "@/lib/price-format";
 
-export function ProductCard(){
-    return(
+interface ProductCardProps {
+    image_url: string,
+    name: string,
+    price_in_cents: number,
+}
+
+export function ProductCard({ image_url, name, price_in_cents }: ProductCardProps) {
+    return (
         <ProductCardContainer>
-            <Image src={imageExample} alt="" width={imageExample.width} height={imageExample.height} />
+            <Image src={image_url} alt="" width={imageExample.width} height={imageExample.height} />
             <div>
-                <h2>Caneca de cerâmica</h2>
+                <h2>{name}</h2>
                 <Separator />
-                <span>R$ 40,00</span>
+                <span>{priceFormat(price_in_cents)}</span>
             </div>
         </ProductCardContainer>
     )
