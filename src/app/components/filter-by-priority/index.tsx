@@ -1,11 +1,14 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ArrowDownIcon } from "../icons/arrow-down-icon";
 import { FilterByPriorityContainer } from "./styles";
+import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
+import { Priority } from "@/enum/priority";
 
 export function FilterByPriority() {
     const [open, setOpen] = useState<boolean>(false)
+    const { setPriorityValue, priorityValue } = useContext(AppContext) as AppContextProviderProps
     const dropdownRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
@@ -34,10 +37,10 @@ export function FilterByPriority() {
             {
                 open &&
                 <ul>
-                    <li>Novidades</li>
-                    <li>Preço: Maior - menor</li>
-                    <li>Preço: Menor - maior</li>
-                    <li>Mais vendidos</li>
+                    <li onClick={() => setPriorityValue(Priority.NEWS)}>Novidades</li>
+                    <li onClick={() => setPriorityValue(Priority.LARGER_TO_SMALLER)}>Preço: Maior - menor</li>
+                    <li onClick={() => setPriorityValue(Priority.SMALLER_TO_LARGER)}>Preço: Menor - maior</li>
+                    <li onClick={() => setPriorityValue(Priority.BEST_SELLERS)}>Mais vendidos</li>
                 </ul>
             }
         </FilterByPriorityContainer>

@@ -1,14 +1,41 @@
+'use client'
+
+import { useContext } from "react";
 import { CategoryItem, CategoryListContainer } from "./styles";
+import { Category } from "@/enum/category";
+import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
 
-interface FilterByCategoryProps {
+export function FilterByCategory() {
+    const {
+        categoryValue,
+        setCategoryValue,
+    }  = useContext(AppContext) as AppContextProviderProps
 
-}
-export function FilterByCategory(props: FilterByCategoryProps) {
+    function handleCategoryItem(categoryValue: Category) {
+        setCategoryValue(categoryValue)
+    }
+
     return (
         <CategoryListContainer>
-            <CategoryItem selected>todos os produtos</CategoryItem>
-            <CategoryItem>camisetas</CategoryItem>
-            <CategoryItem>canecas</CategoryItem>
+            <CategoryItem
+                onClick={() => handleCategoryItem(Category.ALL_PRODUCTS)}
+                selected={categoryValue === Category.ALL_PRODUCTS ? true : false}
+            >
+                todos os produtos
+            </CategoryItem>
+            <CategoryItem 
+                onClick={() => setCategoryValue(Category.TSHIRTS)}
+                selected={categoryValue === Category.TSHIRTS ? true : false}
+            >
+                camisetas
+            </CategoryItem>
+            <CategoryItem 
+                onClick={() => setCategoryValue(Category.MUGS)}
+                selected={categoryValue === Category.MUGS ? true : false}
+            >
+                canecas
+            </CategoryItem>
+            
         </CategoryListContainer>
     )
 }
