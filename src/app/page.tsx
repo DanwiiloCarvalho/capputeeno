@@ -1,11 +1,10 @@
+import React from "react";
 import { FilterBar } from "./components/filter-bar";
-import { FilterByCategory } from "./components/filter-by-category";
-import { ProductList } from "./components/product-list/product-list";
 import { MainContainer } from "./styles";
-
-
+import { ProductList } from "./components/product-list";
 
 export default function Home() {
+  
   return (
     <MainContainer>
       <FilterBar />
