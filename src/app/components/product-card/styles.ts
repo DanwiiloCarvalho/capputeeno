@@ -5,10 +5,6 @@ import styled from "styled-components"
 export const ProductCardContainer = styled.article`
     display: flex;
     flex-direction: column;
-    
-    /* width: 16rem; */
-    /* height: 23.625rem; */
-
     line-height: 1.3125rem;
     border-radius: 0.5rem 0.5rem 0.25rem 0.25rem;
     background-color: rgba(255, 255, 255, 0.40);
@@ -25,6 +21,7 @@ export const ProductCardContainer = styled.article`
         height: 18.75rem;
         border-top-left-radius: inherit;
         border-top-right-radius: inherit;
+        object-fit: cover;
     }
 
     > div {
