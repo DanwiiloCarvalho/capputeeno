@@ -22,7 +22,7 @@ export function FilterContext({ children }: FilterContextProps) {
     const [priorityValue, setPriorityValue] = useState<Priority>(Priority.BEST_SELLERS)
     const [searchBarValue, setSearchBarValue] = useState<string>('')
 
-    const appContextValue = {
+    const appContextValues = {
         categoryValue,
         setCategoryValue,
         priorityValue,
@@ -32,7 +32,7 @@ export function FilterContext({ children }: FilterContextProps) {
     } as AppContextProviderProps
 
     return (
-        <AppContext.Provider value={appContextValue}>
+        <AppContext.Provider value={appContextValues}>
             {children}
         </AppContext.Provider>
     )
