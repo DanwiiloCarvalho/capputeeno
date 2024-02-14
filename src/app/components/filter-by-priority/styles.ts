@@ -43,6 +43,9 @@ export const FilterByPriorityContainer = styled.div`
 
         > li {
             cursor: pointer;
+            &:hover {
+                color: ${ props => props.theme["--Selected-Category-Filter"] };
+            }
         }
     }
 `
