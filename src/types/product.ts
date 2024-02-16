@@ -5,4 +5,5 @@ export interface Product {
     sales: number,
     id: string,
     image_url: string,
+    description: string
 }
