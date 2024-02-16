@@ -13,20 +13,25 @@ export function FilterByPriority() {
 
     useEffect(() => {
 
-        const exampleFunction = (e: Event) => {
+        const closeFilterByPriority = (e: Event) => {
             if (dropdownRef.current !== null && !dropdownRef.current.contains(e.target as Node)) {
                 setOpen(!open)
             }
         }
 
         if (open) {
-            window.addEventListener('click', exampleFunction)
+            window.addEventListener('click', closeFilterByPriority)
         }
 
         return () => {
-            window.removeEventListener('click', exampleFunction)
+            window.removeEventListener('click', closeFilterByPriority)
         }
     }, [open])
+
+    function handleListItem(priority: Priority) {
+        setPriorityValue(priority)
+        setOpen(false)
+    }
 
     return (
         <FilterByPriorityContainer ref={dropdownRef}>
@@ -37,10 +42,10 @@ export function FilterByPriority() {
             {
                 open &&
                 <ul>
-                    <li onClick={() => setPriorityValue(Priority.NEWS)}>Novidades</li>
-                    <li onClick={() => setPriorityValue(Priority.LARGER_TO_SMALLER)}>Preço: Maior - menor</li>
-                    <li onClick={() => setPriorityValue(Priority.SMALLER_TO_LARGER)}>Preço: Menor - maior</li>
-                    <li onClick={() => setPriorityValue(Priority.BEST_SELLERS)}>Mais vendidos</li>
+                    <li onClick={() => handleListItem(Priority.NEWS)}>Novidades</li>
+                    <li onClick={() => handleListItem(Priority.LARGER_TO_SMALLER)}>Preço: Maior - menor</li>
+                    <li onClick={() => handleListItem(Priority.SMALLER_TO_LARGER)}>Preço: Menor - maior</li>
+                    <li onClick={() => handleListItem(Priority.BEST_SELLERS)}>Mais vendidos</li>
                 </ul>
             }
         </FilterByPriorityContainer>

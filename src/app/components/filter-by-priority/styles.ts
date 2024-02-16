@@ -43,6 +43,7 @@ export const FilterByPriorityContainer = styled.div`
 
         > li {
             cursor: pointer;
+            width: fit-content;
             &:hover {
                 color: ${ props => props.theme["--Selected-Category-Filter"] };
             }
