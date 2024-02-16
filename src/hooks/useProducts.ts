@@ -2,14 +2,9 @@ import { AppContext, AppContextProviderProps } from "@/app/contexts/context-prov
 import { Category } from "@/enum/category";
 import { Priority } from "@/enum/priority";
 import { Product } from "@/types/product";
+import { ProductList } from "@/types/product-list";
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
-
-interface ProductList {
-    data: {
-        allProducts: Product[]
-    }
-}
 
 export function useProducts(category: Category, priority: Priority) {
     const { categoryValue, priorityValue } = useContext(AppContext) as AppContextProviderProps
