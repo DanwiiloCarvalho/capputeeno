@@ -17,7 +17,7 @@ export function ProductList() {
                     data?.map(product => {
                         return (
                             <li key={product.id}>
-                                <Link href={'/product/1'}>
+                                <Link href={`/product/${product.id}`}>
                                     <ProductCard
                                         image_url={product.image_url}
                                         name={product.name}
