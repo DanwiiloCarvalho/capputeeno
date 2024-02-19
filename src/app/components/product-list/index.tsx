@@ -5,16 +5,19 @@ import { ProductListContainer } from "./styles";
 import { useProducts } from "@/hooks/useProducts";
 import { useContext, useEffect } from "react";
 import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
+import { useSearchBar } from "@/hooks/useSearchBar";
 
 export function ProductList() {
-    const { categoryValue, priorityValue } = useContext(AppContext) as AppContextProviderProps
+    const { categoryValue, priorityValue, searchBarValue } = useContext(AppContext) as AppContextProviderProps
     const { data } = useProducts(categoryValue, priorityValue)
+
+    const { filteredValue } = useSearchBar(data, searchBarValue)
 
     return (
         <ProductListContainer>
             <ul>
                 {
-                    data?.map(product => {
+                    filteredValue?.map(product => {
                         return (
                             <li key={product.id}>
                                 <Link href={`/product/${product.id}`}>
