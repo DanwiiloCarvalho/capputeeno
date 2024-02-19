@@ -4,10 +4,7 @@ import { CartIcon } from "../icons/cart-icon"
 import { SearchBar } from "../searchbar"
 import { CartCount } from "../icons/cart-count"
 
-interface HeaderProps {
-
-}
-export function Header(props : HeaderProps){
+export function Header(){
     return(
         <HeaderContainer>
             <Link href={'/'} prefetch={false}>capputeeno</Link>
