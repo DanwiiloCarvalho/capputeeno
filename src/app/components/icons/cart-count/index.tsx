@@ -1,10 +1,12 @@
+'use client'
+
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { CartCountContainer } from "./styles";
 
-interface CartCountProps {
-
-}
-export function CartCount(props: CartCountProps) {
+export function CartCount() {
+    const { units } = useLocalStorage()
+    
     return (
-        <CartCountContainer>2</CartCountContainer>
+        <CartCountContainer>{units}</CartCountContainer>
     )
 }
