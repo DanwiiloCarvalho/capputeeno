@@ -73,7 +73,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                     <p>{data.data.Product.description}</p>
                                 </Description>
                             </div>
-                            <AddToCartButton />
+                            <AddToCartButton product={data.data.Product} />
                         </Info>
                     </>
                 }
