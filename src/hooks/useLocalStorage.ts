@@ -25,7 +25,7 @@ export function useLocalStorage() {
         setUnits(sum)
     }, [products])
 
-    function setProductCart(newProduct: Product) {
+    function setCartProduct(newProduct: Product) {
         const cartProductFound = products.find(product => product.id === newProduct.id)
 
         if (cartProductFound) {
@@ -51,9 +51,20 @@ export function useLocalStorage() {
         }
     }
 
+    function deleteCartProduct(productId: string) {
+        const cartProductFound = products.find(product => product.id === productId)
+
+        if (cartProductFound) {
+            const newProductsList = products.filter(cartItem => cartItem.id != productId)
+            localStorage.setItem("productsList", JSON.stringify(newProductsList))
+            setProducts(newProductsList)
+        }
+    }
+
     return {
         products,
         units,
-        setProductCart
+        setCartProduct,
+        deleteCartProduct
     }
 }
