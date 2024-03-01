@@ -11,10 +11,10 @@ interface AddToCartButtonProps {
 
 export function AddToCartButton({ product }: AddToCartButtonProps) {
     
-    const { setProductCart } = useLocalStorage()
+    const { setCartProduct } = useLocalStorage()
 
     function handleAddToCartButton() {
-        setProductCart(product)
+        setCartProduct(product)
     }
 
     return (
