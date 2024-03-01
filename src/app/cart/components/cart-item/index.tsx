@@ -3,10 +3,18 @@ import { TrashButton } from '../trash-button'
 import { CartItemContainer, QuantityPriceContainer, QuantityTrigger } from './styles'
 import { priceFormat } from '@/utils/price-format'
 import { CartProductItem } from '@/types/cart-product-item'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { ChangeEvent } from 'react'
 
 export function CartItem(cartItem: CartProductItem) {
+    const { updateUnits } = useLocalStorage()
+
+    function handleQuantityTrigger(e: ChangeEvent<HTMLSelectElement>) {
+        updateUnits(cartItem.id, Number(e.target.value))
+    }
+
     let unitsOptions = []
-    for (let option = 1; option <= cartItem.units; option++) {
+    for (let option = 1; option <= 10; option++) {
         unitsOptions.push(<option key={option} value={option}>{option}</option>)
     }
 
@@ -22,7 +30,7 @@ export function CartItem(cartItem: CartProductItem) {
                     <p>{ cartItem.description }</p>
                 </div>
                 <QuantityPriceContainer>
-                    <QuantityTrigger name="" id="" defaultValue={cartItem.units}>
+                    <QuantityTrigger name="" id="" defaultValue={cartItem.units} onChange={(event) => handleQuantityTrigger(event)}>
                         { unitsOptions.map(option => option) }
                     </QuantityTrigger>
                     <span>{ priceFormat(cartItem.price_in_cents) }</span>
