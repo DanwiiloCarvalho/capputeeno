@@ -18,6 +18,7 @@ export const defaultTheme = {
     '--Select-Border': '#A8A8B3',
     '--Select-Background': '#F3F5F6',
     '--Purchase-Text-Color': '#F5F5FA',
+    '--Pagination-Button-Background': 'E9E9F0',
 } as const
 
 export const GlobalStyle = createGlobalStyle`
