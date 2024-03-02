@@ -16,5 +16,11 @@ export const PaginationContainer = styled.div`
         color: ${ props => props.theme["--Text-Dark-Inputs-Icons"] };
         background-color: ${ props => props.theme["--Pagination-Button-Background"] };
         cursor: pointer;
+
+        &:hover {
+            border: 1px solid ${ props => props.theme["--Underline-Color"] };
+            color: ${ props => props.theme["--Underline-Color"] };
+            background-color: #F5F5FA;
+        }
     }
 `
