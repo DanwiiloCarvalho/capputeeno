@@ -1,11 +1,11 @@
 'use client'
+import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
+import { useProducts } from "@/hooks/useProducts";
+import { useSearchBar } from "@/hooks/useSearchBar";
 import Link from "next/link";
+import { useContext } from "react";
 import { ProductCard } from "../product-card";
 import { ProductListContainer } from "./styles";
-import { useProducts } from "@/hooks/useProducts";
-import { useContext, useEffect } from "react";
-import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
-import { useSearchBar } from "@/hooks/useSearchBar";
 
 export function ProductList() {
     const { categoryValue, priorityValue, searchBarValue } = useContext(AppContext) as AppContextProviderProps
