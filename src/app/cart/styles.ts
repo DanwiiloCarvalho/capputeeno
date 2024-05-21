@@ -8,6 +8,7 @@ export const CartPageContainer = styled.main`
     flex-direction: column;
 
     a {
+        display: inline-block;
         width: fit-content;
     }
 
