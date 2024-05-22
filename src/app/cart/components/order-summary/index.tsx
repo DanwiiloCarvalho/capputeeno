@@ -34,7 +34,7 @@ export function OrderSummary() {
 
                 <div>
                     <p>Total</p>
-                    <p>{ priceFormat(subTotal + 4000) }</p>
+                    <p>{ priceFormat(products.length ? subTotal + 4000 : subTotal) }</p>
                 </div>
                 <FinalizePurchaseButton />
             </SummaryInfo>
