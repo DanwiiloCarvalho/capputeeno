@@ -20,7 +20,7 @@ export function ProductList() {
                     filteredValue?.map(product => {
                         return (
                             <li key={product.id}>
-                                <Link href={`/product/${product.id}`}>
+                                <Link href={`/product/${product.id}`} prefetch={false}>
                                     <ProductCard
                                         image_url={product.image_url}
                                         name={product.name}
