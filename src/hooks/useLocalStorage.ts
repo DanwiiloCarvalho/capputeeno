@@ -62,7 +62,6 @@ export function useLocalStorage() {
     }
 
     function updateUnits(productId: string, unitsValue: number) {
-        console.log("Função chamada!")
         const newProductsList = products.map(product => {
             if (product.id === productId) {
                 product.units = unitsValue
