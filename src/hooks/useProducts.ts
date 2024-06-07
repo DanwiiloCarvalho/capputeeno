@@ -63,7 +63,7 @@ export function useProducts(category: Category, priority: Priority) {
                     }
                 }`
 
-    const request = new Request(url, {
+    const request = new Request(url + '/api/graphql', {
         method: 'POST',
         body: JSON.stringify({
             query: queryText 

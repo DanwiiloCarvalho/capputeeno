@@ -23,12 +23,11 @@ export async function generateStaticParams() {
           name
           category
           price_in_cents
-          description
         }
     }
     `
 
-    const request = new Request(url, {
+    const request = new Request(url + '/api/graphql', {
         method: 'POST',
         body: JSON.stringify({
             query: queryText
@@ -44,13 +43,15 @@ export async function generateStaticParams() {
         return products.data.allProducts.map(product => ({ id: product.id }))
     } catch (error) {
         console.error("GenerateStaticParams error: " + error)
+        return []
     }
 }
+
 
 export default async function ProductPage({ params }: ProductPageProps) {
     const { id } = params
 
-    const { data } = await useProduct(url, id)
+    const { data } = await useProduct(url + '/api/graphql', id)
 
     return (
         <ProductPageContainer>
