@@ -60,7 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </Link>
             <InfoSection>
                 {
-                    data &&
+                    data?.data.Product &&
                     <>
                         <Image src={data?.data.Product.image_url as string} alt="" width={640} height={580} />
                         <Info>
