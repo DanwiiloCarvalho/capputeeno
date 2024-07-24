@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
-import { Saira_Stencil_One, Saira } from 'next/font/google'
+import { Chakra } from '@/lib/chakra'
 import StyledComponentsRegistry from '@/lib/registry'
-import { Providers } from './components/providers'
-import { Header } from './components/header'
+import type { Metadata } from 'next'
+import { Saira, Saira_Stencil_One } from 'next/font/google'
 import { DefaultPageLayout } from './components/defaultPageLayout'
+import { Header } from './components/header'
+import { Providers } from './components/providers'
 
 const saira_stencil_one = Saira_Stencil_One({
   weight: ['400'],
@@ -34,17 +35,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
-        <body className={`${saira_stencil_one.variable} ${saira.variable}`}>
-          <Providers>
-            <StyledComponentsRegistry>
-              <Header />
-              <DefaultPageLayout>
-                { children }
-              </DefaultPageLayout>
-            </StyledComponentsRegistry>
-          </Providers>
-        </body>
+    <html lang="pt-BR" className={`${saira_stencil_one.variable} ${saira.variable}`}>
+      <body>
+        <Providers>
+          <StyledComponentsRegistry>
+            <Header />
+            <DefaultPageLayout>
+              <Chakra>
+                {children}
+              </Chakra>
+            </DefaultPageLayout>
+          </StyledComponentsRegistry>
+        </Providers>
+      </body>
     </html>
   )
 }
