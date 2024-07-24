@@ -1,8 +1,6 @@
-import React from "react";
 import { FilterBar } from "./components/filter-bar";
-import { MainContainer } from "./styles";
 import { ProductList } from "./components/product-list";
-import { Pagination } from "./components/pagination";
+import { MainContainer } from "./styles";
 
 export default function Home() {
   
