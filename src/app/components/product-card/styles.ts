@@ -3,6 +3,7 @@
 import styled from "styled-components"
 
 export const ProductCardContainer = styled.article`
+    font-family: var(--font-saira);
     display: flex;
     flex-direction: column;
     line-height: 1.3125rem;

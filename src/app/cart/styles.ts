@@ -3,6 +3,7 @@
 import styled from "styled-components"
 
 export const CartPageContainer = styled.main`
+    font-family: var(--font-saira);
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -30,12 +31,14 @@ export const CartProductListContainer = styled.section`
         color: ${ props => props.theme["--Selected-Category-Filter"] };
         font-weight: 500;
         line-height: 2.25rem;
+        font-size: 1.5rem;
     }
 
     > p {
         margin-top: .38rem;
         font-weight: 300;
         font-size: 1rem;
+        line-height: 1.5625rem;
         color: ${ props => props.theme["--Selected-Category-Filter"] };
 
         > span {

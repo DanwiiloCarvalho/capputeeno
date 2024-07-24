@@ -98,13 +98,11 @@ export const QuantityTrigger = styled.select`
     border-radius: .5rem;
     border: 1px solid ${ props => props.theme["--Select-Border"] };
     background-color: ${ props => props.theme["--Select-Background"] };
-    padding: .5rem .25rem .5rem .75rem;
+    padding: .5rem .75rem .5rem .75rem;
     color: ${ props => props.theme["--Text-Dark-Inputs-Icons"] };
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
-    
-    width: 4rem;
 `
 
 export const QuantityPriceContainer = styled.div`

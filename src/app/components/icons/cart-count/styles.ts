@@ -3,6 +3,7 @@
 import styled from "styled-components";
 
 export const CartCountContainer = styled.span`
+    font-family: var(--font-saira);
     width: 1.0625rem;
     height: 1.0625rem;
     border-radius: 50%;

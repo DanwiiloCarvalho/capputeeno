@@ -3,7 +3,9 @@
 import styled from "styled-components"
 
 export const BackButtonContainer = styled.div`
+    font-family: var(--font-saira);
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     width: 4.5rem;
     background-color: transparent;

@@ -34,7 +34,6 @@ export const OrderSummaryContainer = styled.section`
 `
 
 export const SummaryInfo = styled.div`
-
     > h2 {
         font-weight: 600;
         font-size: 1.25rem;
@@ -46,6 +45,7 @@ export const SummaryInfo = styled.div`
         display: flex;
         justify-content: space-between;
         margin: 1rem 0;
+        line-height: 1.5625rem;
     }
 
     > button {

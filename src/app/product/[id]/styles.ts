@@ -3,6 +3,7 @@
 import styled from "styled-components"
 
 export const ProductPageContainer = styled.main`
+    font-family: var(--font-saira);
     display: flex;
     flex-direction: column;
     margin-top: 1rem;

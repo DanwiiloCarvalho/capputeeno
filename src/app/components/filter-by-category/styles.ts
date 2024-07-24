@@ -3,6 +3,8 @@
 import styled from "styled-components";
 
 export const CategoryListContainer = styled.ul`
+    font-family: var(--font-saira);
+    list-style: none;
     display: flex;
     justify-content: space-between;
     line-height: 137.5%;

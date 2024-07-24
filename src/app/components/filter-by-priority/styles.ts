@@ -3,6 +3,7 @@
 import styled from "styled-components"
 
 export const FilterByPriorityContainer = styled.div`
+    font-family: var(--font-saira);
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -42,6 +43,7 @@ export const FilterByPriorityContainer = styled.div`
         z-index: 999;
 
         > li {
+            font-size: .875rem;
             cursor: pointer;
             width: fit-content;
             &:hover {
