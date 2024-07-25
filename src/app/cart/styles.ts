@@ -48,6 +48,7 @@ export const CartProductListContainer = styled.section`
 
     ul {
         margin-top: 1.44rem;
+        overflow-y: hidden;
 
         li {
             height: 35.321rem;
