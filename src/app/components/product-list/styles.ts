@@ -8,6 +8,7 @@ export const ProductListContainer = styled.section`
     > ul {
         display: grid;
         justify-content: center;
+        overflow-y: hidden;
 
         grid-template-columns: repeat(auto-fill, 16rem);
         grid-template-rows: repeat(auto-fit, 23.625rem);

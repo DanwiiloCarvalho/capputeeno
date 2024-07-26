@@ -7,10 +7,15 @@ import Link from "next/link";
 import { useContext } from "react";
 import { ProductCard } from "../product-card";
 import { ProductListContainer } from "./styles";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export function ProductList() {
     const { categoryValue, priorityValue, searchBarValue } = useContext(AppContext) as AppContextProviderProps
     const { data, isLoading } = useProducts(categoryValue, priorityValue)
+    const [ parent, enableAnimations ] = useAutoAnimate({
+        duration: 250,
+        easing: "linear"
+    })
 
     const { filteredValue } = useSearchBar(data, searchBarValue)
 
@@ -60,7 +65,7 @@ export function ProductList() {
                     </Grid>
                 ) : (
                     <ProductListContainer>
-                        <ul>
+                        <ul ref={parent}>
                             {
                                 filteredValue?.map(product => {
                                     return (
