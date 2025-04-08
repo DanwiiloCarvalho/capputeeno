@@ -1,7 +1,6 @@
-import Image from "next/image";
-import imageExample from "@/app/product-image/caneca.jpg"
-import { ProductCardContainer, Separator } from "./styles";
 import { priceFormat } from "@/utils/price-format";
+import Image from "next/image";
+import { ProductCardContainer, Separator } from "./styles";
 interface ProductCardProps {
     image_url: string,
     name: string,
@@ -11,7 +10,7 @@ interface ProductCardProps {
 export function ProductCard({ image_url, name, price_in_cents }: ProductCardProps) {
     return (
         <ProductCardContainer>
-            <Image src={image_url} alt="" width={imageExample.width} height={imageExample.height} priority />
+            <Image src={image_url} alt="" width={640} height={580} priority />
             <div>
                 <h2>{name}</h2>
                 <Separator />
