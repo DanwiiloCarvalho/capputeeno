@@ -2,9 +2,8 @@ import * as useLocalStorage from "@/hooks/useLocalStorage";
 import { render, screen } from "@testing-library/react";
 import { CartIcon } from ".";
 
-
-describe('CartCount', () => {
-    it('should display the units correctly', async () => {
+describe('CartIcon', () => {
+    it('should display the CartCount when the quantity of products is greater than 0', async () => {
         vi.spyOn(useLocalStorage, 'useLocalStorage').mockReturnValue({
             units: 2,
             products: [
