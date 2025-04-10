@@ -10,6 +10,13 @@ export default defineConfig({
         setupFiles: ['./vitestSetup.ts'],
         coverage: {
             provider: 'v8',
+            include: [
+                'src/**/*.{ts,tsx}',
+            ],
+            exclude: [
+                '.next/**',
+                'next.config.*',
+            ],
         }
     },
 })
