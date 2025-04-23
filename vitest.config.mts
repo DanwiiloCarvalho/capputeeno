@@ -17,6 +17,8 @@ export default defineConfig({
                 '.next/**',
                 'next.config.*',
                 'src/types/**',
+                'src/app/layout.tsx',
+                'src/app/components/defaultPageLayout.ts',
             ],
         }
     },
