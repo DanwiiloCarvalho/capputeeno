@@ -19,6 +19,7 @@ export default defineConfig({
                 'src/types/**',
                 'src/app/layout.tsx',
                 'src/app/components/defaultPageLayout.ts',
+                'src/lib/**',
             ],
         }
     },
