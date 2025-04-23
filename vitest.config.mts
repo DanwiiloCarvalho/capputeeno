@@ -16,6 +16,7 @@ export default defineConfig({
             exclude: [
                 '.next/**',
                 'next.config.*',
+                'src/types/**',
             ],
         }
     },
