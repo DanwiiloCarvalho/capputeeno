@@ -20,22 +20,29 @@ export const StyledUnorderedList = styled.ul`
         height: 2rem;
         border-radius: 8px;
         border: none;
-        background-color: ${ props => props.theme["--Pagination-Button-Background"] };
-        cursor: pointer;
+        background-color: ${props => props.theme["--Pagination-Button-Background"]};
+    }
+`
 
-        a {
-            color: ${ props => props.theme["--Text-Dark-Inputs-Icons"] };
-            line-height: 150%;
-        }
+interface StyledButtonProps {
+    $type: 'page' | 'chevron'
+    $currentPage?: number
+    $pageNumber?: number
+}
 
-        &:hover {
-            border: 1px solid ${ props => props.theme["--Underline-Color"] };
-            background-color: #F5F5FA;
+export const StyledButton = styled.button<StyledButtonProps>`
+    color: ${props => props.theme["--Text-Dark-Inputs-Icons"]};
+    line-height: 150%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            a {
-                color: ${ props => props.theme["--Underline-Color"] };
-                font-weight: 600;
-            }
-        }
+    ${props => props.$type === 'page' && props.$currentPage === props.$pageNumber && `color: ${props.theme["--Underline-Color"]};
+        font-weight: 600;
+        border: 1px solid ${props.theme["--Underline-Color"]};
+        border-radius: inherit;
+        background-color: #F5F5FA;`
     }
 `
