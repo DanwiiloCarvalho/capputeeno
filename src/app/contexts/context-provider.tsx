@@ -12,10 +12,12 @@ export interface AppContextProviderProps {
     priorityValue: Priority,
     searchBarValue: string,
     products: CartProductItem[],
+    currentPage: number,
     setCategoryValue: (categoryValue: Category) => void,
     setPriorityValue: (priorityValue: Priority) => void,
     setSearchBarValue: (searchValue: string) => void,
     setProducts: (cartProductList: CartProductItem[]) => void,
+    setCurrentPage: (pageNumber: number) => void
 }
 
 export const AppContext = createContext({})
@@ -25,6 +27,7 @@ export function FilterContext({ children }: FilterContextProps) {
     const [priorityValue, setPriorityValue] = useState<Priority>(Priority.BEST_SELLERS)
     const [searchBarValue, setSearchBarValue] = useState<string>('')
     const [products, setProducts] = useState<CartProductItem[]>([] as CartProductItem[])
+    const [currentPage, setCurrentPage] = useState<number>(0);
 
     const appContextValues = {
         categoryValue,
@@ -34,7 +37,9 @@ export function FilterContext({ children }: FilterContextProps) {
         searchBarValue,
         setSearchBarValue,
         products, 
-        setProducts
+        setProducts,
+        currentPage,
+        setCurrentPage
     } as AppContextProviderProps
 
     return (
