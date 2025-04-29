@@ -4,6 +4,7 @@ import { ChevronLeftIcon } from "../icons/left-arrow";
 import { ChevronRightIcon } from "../icons/right-arrow";
 import { PaginationContainer, StyledButton, StyledUnorderedList } from "./styles";
 import { AppContext, AppContextProviderProps } from "@/app/contexts/context-provider";
+import { Category } from "@/enum/category";
 
 interface PaginationProps {
     currentPage: number;
@@ -11,14 +12,20 @@ interface PaginationProps {
 }
 
 export function Pagination({ currentPage, totalPages }: PaginationProps) {
-    const { setCurrentPage } = useContext(AppContext) as AppContextProviderProps
+    const { setCurrentPage, categoryValue } = useContext(AppContext) as AppContextProviderProps
     let buttons = [];
 
     for (let i = 1; i <= totalPages; i++) {
         buttons.push(i);
     }
 
-    function nextPage() {
+    function nextPage(contextCategoryValue: Category) {
+        if (contextCategoryValue === Category.TSHIRTS || contextCategoryValue === Category.MUGS) {
+            if (currentPage >= 2) {
+                return
+            }
+        }
+        
         if (currentPage >= 4) {
             return
         }
@@ -46,8 +53,15 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
                         <li key={button}><StyledButton $type="page" $currentPage={currentPage + 1} $pageNumber={button} onClick={() => selectPage(button)}>{button}</StyledButton></li>
                     )
                 })}
-                <li><StyledButton $type="chevron" aria-label="Go to previous page" onClick={previousPage}><ChevronLeftIcon /></StyledButton></li>
-                <li><StyledButton $type="chevron" aria-label="Go to next page" onClick={nextPage}><ChevronRightIcon /></StyledButton></li>
+                <li>
+                    <StyledButton $type="chevron" aria-label="Go to previous page" onClick={previousPage}>
+                        <ChevronLeftIcon />
+                    </StyledButton>
+                </li>
+                <li><StyledButton $type="chevron" aria-label="Go to next page" onClick={() => nextPage(categoryValue)}>
+                        <ChevronRightIcon />
+                    </StyledButton>
+                </li>
             </StyledUnorderedList>
         </PaginationContainer>
     )
