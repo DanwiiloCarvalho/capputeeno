@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 
 export function useProducts(category: Category, priority: Priority) {
-    const { categoryValue, priorityValue } = useContext(AppContext) as AppContextProviderProps
+    const { categoryValue, priorityValue, currentPage } = useContext(AppContext) as AppContextProviderProps
 
     const url = process.env.NEXT_PUBLIC_API_URL as string
 
@@ -37,7 +37,10 @@ export function useProducts(category: Category, priority: Priority) {
 
     let filterCategory: string  = ``
 
+    let perPage: number = 12;
+
     if (category !== Category.ALL_PRODUCTS) {
+        perPage = 10;
         if (category === Category.MUGS) {
             filterCategory = `category: "mugs"`
         } else {
@@ -49,19 +52,21 @@ export function useProducts(category: Category, priority: Priority) {
                     allProducts(
                     sortField: "${sortField}",
                     sortOrder:"${sortOrder}",
+                    page: ${currentPage},
+                    perPage: ${perPage},
                     filter: {
                         ${filterCategory}     
                     }
                     ) {
-                    name
-                    price_in_cents
-                    sales
-                    category
-                    image_url
-                    id
-                    created_at
-                    }
-                }`
+                        name
+                        price_in_cents
+                        sales
+                        category
+                        image_url
+                        id
+                        created_at
+                        }
+                    }`
 
     const request = new Request(url + '/api/graphql', {
         method: 'POST',
@@ -74,7 +79,7 @@ export function useProducts(category: Category, priority: Priority) {
     })
 
     const query = useQuery<Product[]>({
-        queryKey: ['products', priorityValue, categoryValue],
+        queryKey: ['products', priorityValue, categoryValue, currentPage],
         queryFn: async () => {
             const data = await fetch(request)
             const response: ProductList = await data.json()
