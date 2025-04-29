@@ -4,7 +4,7 @@ import { AppContext } from "@/app/contexts/context-provider"
 import { Category } from "@/enum/category";
 
 const mockSetcategoryValue = vi.fn();
-
+const mockSetCurrentPage = vi.fn();
 describe('FilterByCategory', () => {
 
     beforeEach(() => {
@@ -13,7 +13,7 @@ describe('FilterByCategory', () => {
 
     it('should send the category "ALL PRODUCTS" to the app context', async () => {
         render(
-            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue }}>
+            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue, setCurrentPage: mockSetCurrentPage }}>
                 <FilterByCategory />
             </AppContext.Provider>
         )
@@ -27,7 +27,7 @@ describe('FilterByCategory', () => {
 
     it('should send the category "TSHIRTS" to the app context', async () => {
         render(
-            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue }}>
+            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue, setCurrentPage: mockSetCurrentPage }}>
                 <FilterByCategory />
             </AppContext.Provider>
         )
@@ -41,7 +41,7 @@ describe('FilterByCategory', () => {
 
     it('should send the category "MUGS" to the app context', async () => {
         render(
-            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue }}>
+            <AppContext.Provider value={{ setCategoryValue: mockSetcategoryValue, setCurrentPage: mockSetCurrentPage }}>
                 <FilterByCategory />
             </AppContext.Provider>
         )
