@@ -13,7 +13,7 @@
 
 `Capputeeno` é a resolução do desafio [Frontend challenge](https://github.com/Rocketseat/frontend-challenge) da Rockeseat, o qual consiste na implementação de um protótipo de e-commerce para venda de canecas e camisetas que tem as seguintes funcionalidades:
 
-- [ ] Catálogo de produtos com paginação `Pendente`
+- [ ] Catálogo de produtos com paginação
 - [ ] Filtragem produtos por categoria
 - [ ] Busca por nome do produto
 - [ ] Adicionar e remover produtos do carrinho
@@ -106,6 +106,10 @@ Para organizar a listagem pelo nível de prioridade, basta clicar em `Organizar 
 * Mais vendidos
 
 <img src="./public/prioridade_capputeeno.png" /><br>
+
+Os produtos são listados de forma paginada, onde pode-se acessar cada página clicando em um número específico, ou avançando ou retrocedendo páginas nos botões de seta:
+
+<img src="./public/paginacao_capputeeno.gif" /><br>
 
 Também é possível procurar por um produto específico
 digitando o nome na caixa de pesquisa:
