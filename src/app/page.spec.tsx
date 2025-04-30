@@ -32,12 +32,63 @@ vi.mock('@/hooks/useProducts');
 vi.mock('@/hooks/useSearchBar');
 
 describe('Home component', () => {
-    it('should render the Home component', async () => {
+    it('should render the Home component displaying the ALL PRODUCTS pagination', async () => {
+
+        const contextValues = {
+            categoryValue: Category.ALL_PRODUCTS,
+            priority: Priority.BEST_SELLERS,
+            searhBarValue: '',
+            products: mockProductList
+        };
+
+        (useProducts as Mock).mockReturnValue({
+            data: mockProductList,
+            isLoading: true
+        });
+
+        (useSearchBar as Mock).mockReturnValue({
+            filteredValue: mockProductList
+        })
+
+        render(
+            <AppContext.Provider value={{ ...contextValues }}>
+                <Home />
+            </AppContext.Provider>
+        )
+    })
+
+    it('should render the Home component displaying the MUGS pagination', async () => {
 
         const contextValues = {
             categoryValue: Category.MUGS,
             priority: Priority.BEST_SELLERS,
-            searhBarValue: ''
+            searhBarValue: '',
+            products: mockProductList
+        };
+
+        (useProducts as Mock).mockReturnValue({
+            data: mockProductList,
+            isLoading: true
+        });
+
+        (useSearchBar as Mock).mockReturnValue({
+            filteredValue: mockProductList
+        })
+
+        render(
+            <AppContext.Provider value={{ ...contextValues }}>
+                <Home />
+            </AppContext.Provider>
+        )
+    })
+
+    it('should render the Home component displaying the T-SHIRTS pagination', async () => {
+
+        const contextValues = {
+            categoryValue: Category.MUGS,
+            priority: Priority.BEST_SELLERS,
+            searhBarValue: '',
+            products: mockProductList
         };
 
         (useProducts as Mock).mockReturnValue({
