@@ -8,7 +8,7 @@ export const ProductCardContainer = styled.article`
     flex-direction: column;
     line-height: 1.3125rem;
     border-radius: 0.5rem 0.5rem 0.25rem 0.25rem;
-    background-color: rgba(255, 255, 255, 0.40);
+    background-color: ${ props => props.theme['--Product-Card-Background'] };
     backdrop-filter: blur(10px);
 
     h2 {

@@ -11,7 +11,7 @@ export const SearchBarContainer = styled.div`
 
    height: 2.6rem;
    border-radius: 8px;
-   background-color: #F3F5F6;
+   background-color: ${props => props.theme["--Select-Background"]};
 
    > input {
     border: none;
@@ -24,6 +24,7 @@ export const SearchBarContainer = styled.div`
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
+    color: ${props => props.theme["--Search-Bar-Text"]};
 
     &::placeholder {
       color: ${props => props.theme["--Text-Dark-Inputs-Icons"]};
