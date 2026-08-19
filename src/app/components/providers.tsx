@@ -1,8 +1,8 @@
 'use client'
 
-import { ThemeProvider } from "styled-components"
-import { GlobalStyle, defaultTheme } from "../globalStyle"
+import { GlobalStyle } from "../globalStyle"
 import { FilterContext } from "../contexts/context-provider"
+import { ThemeContextProvider } from "../contexts/theme-provider"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { queryClient } from "@/lib/react-query"
 
@@ -14,10 +14,10 @@ export function Providers({
     return (
         <QueryClientProvider client={queryClient}>
             <FilterContext>
-                <ThemeProvider theme={defaultTheme}>
+                <ThemeContextProvider>
                     {children}
                     <GlobalStyle />
-                </ThemeProvider>
+                </ThemeContextProvider>
             </FilterContext>
         </QueryClientProvider>
     )
