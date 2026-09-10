@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { GlobalStyle } from "../globalStyle"
 import { FilterContext } from "../contexts/context-provider"
 import { ThemeContextProvider } from "../contexts/theme-provider"
@@ -16,7 +17,9 @@ export function Providers({
         <QueryClientProvider client={queryClient}>
             <FilterContext>
                 <ThemeContextProvider>
-                    <NProgressBar />
+                    <Suspense fallback={null}>
+                        <NProgressBar />
+                    </Suspense>
                     {children}
                     <GlobalStyle />
                 </ThemeContextProvider>
