@@ -8,8 +8,7 @@ NProgress.configure({
     showSpinner: false,
     speed: 400,
     minimum: 0.1,
-    easing: 'ease',
-    position: 'fixed',
+    easing: 'ease'
 })
 
 export function NProgressBar() {
