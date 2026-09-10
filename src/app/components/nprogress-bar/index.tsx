@@ -24,6 +24,7 @@ export function NProgressBar() {
             if (!anchor) return
 
             const href = anchor.getAttribute('href')
+            if (href === pathname) return
             if (!href || !href.startsWith('/') || href.startsWith('//')) return
             if (anchor.target === '_blank') return
 
@@ -33,7 +34,7 @@ export function NProgressBar() {
 
         document.addEventListener('mousedown', handleClick)
         return () => document.removeEventListener('mousedown', handleClick)
-    }, [])
+    }, [pathname])
 
     useEffect(() => {
         const hasPathChanged = prevPathname.current !== pathname
