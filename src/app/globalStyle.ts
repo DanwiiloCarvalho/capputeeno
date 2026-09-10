@@ -90,4 +90,35 @@ export const GlobalStyle = createGlobalStyle`
     body, input, textarea, button {
         font: 400 1rem var(--font-saira);
     }
+
+    /* NProgress Custom Styles */
+    #nprogress {
+        pointer-events: none;
+    }
+
+    #nprogress .bar {
+        background: #115D8C;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        box-shadow: 0 0 10px #115D8C, 0 0 5px #115D8C;
+    }
+
+    #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #115D8C, 0 0 5px #115D8C;
+        opacity: 1;
+        transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    #nprogress .spinner {
+        display: none;
+    }
 `

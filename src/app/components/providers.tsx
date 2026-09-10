@@ -5,6 +5,7 @@ import { FilterContext } from "../contexts/context-provider"
 import { ThemeContextProvider } from "../contexts/theme-provider"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { queryClient } from "@/lib/react-query"
+import { NProgressBar } from "./nprogress-bar"
 
 export function Providers({
     children
@@ -15,6 +16,7 @@ export function Providers({
         <QueryClientProvider client={queryClient}>
             <FilterContext>
                 <ThemeContextProvider>
+                    <NProgressBar />
                     {children}
                     <GlobalStyle />
                 </ThemeContextProvider>
